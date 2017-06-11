@@ -1,0 +1,54 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title Redux socket.io Chat app
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    #app
+      .flex-row
+        nav#chat-nav
+          p 聊天室列表
+          .chat-room-list
+            a(href='') room1
+            a.active(href='')  room2
+            a(href='') room3
+          button.btn.color-2  + 创建聊天室
+        section#chat-main.flex
+          header.flex-row
+            h3 当前聊天室：room2
+            span.flex
+            button.btn.sm X 删除该聊天室
+          ul.chat-messages
+            li
+              .message-inner
+                p.chat-username
+                  | Julia
+                  small 14:22
+                p some message goes here
+            li
+              .message-inner
+                p.chat-username
+                  | Julia
+                  small 14:24
+                p tempor incididunt ut labore et tempor incididunt ut labore et
+            li.message-self
+              .message-inner
+                p.chat-username
+                  | Eisneim
+                  small 14:32
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+            li
+              .message-inner
+                p.chat-username
+                  | Julia
+                  small 14:24
+                p tempor incididunt ut labore et tempor incididunt ut labore et
+          #chat-inputbox
+            form.flex-row
+              .flex
+                textarea(name='message', rows='4')
+              div(style='width:130px;text-align:right')
+                button.btn.lg.color-2(type='submit') 发送
+    script(src='/build/boundle.js')
