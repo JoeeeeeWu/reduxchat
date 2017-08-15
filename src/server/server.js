@@ -1,6 +1,6 @@
 import express from "express";
 import { Server } from "http";
-import { makeStore } from "./store";
+import store from "./store";
 import listenWebSocket from "./io";
 
 const app = express();
@@ -13,7 +13,6 @@ app.set("view engine", "pug");
 app.use(express.static(rootPath + "/public"));
 
 const io = require("socket.io")(http);
-const store = makeStore();
 listenWebSocket(io, store);
 
 
